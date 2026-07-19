@@ -3256,7 +3256,7 @@ label {
 
 /* 09 Hero Css */
 .hero-side {
-  height: 100vh !important;
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -3325,7 +3325,7 @@ label {
   width: 100%;
 }
 .hero-content-1{
-  margin-top: -10rem;
+  margin-top: -5rem;
 }
 .hero-content-1 .subtitle {
   padding: 9px 15px;
