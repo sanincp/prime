@@ -2187,7 +2187,7 @@ label {
 }
 .footer-bottom-layout .footer-copyright {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   color: #F8F7F0;
 }
@@ -2291,7 +2291,7 @@ label {
   margin-bottom: 25px;
 }
 .about-widget .footer-logo img {
-  max-width: 265px;
+  max-width: 210px;
 }
 .about-widget .text p {
   font-weight: 400;
@@ -10542,10 +10542,13 @@ label {
 }
 
 .volunteer-card {
-  background-color: #f8f7f0;
+  background-color: var(--theme-color-3);
   padding: 10px;
   border-radius: 10px;
   position: relative;
+}
+.volunteer-card img{
+  height: 400px;
 }
 .volunteer-card:hover a .thumb img {
   transform: scale(1.1);
