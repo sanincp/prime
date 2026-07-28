@@ -862,3 +862,42 @@
     });
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const overlay = document.getElementById('bioModalOverlay');
+  const modalImg = document.getElementById('bioModalImg');
+  const modalName = document.getElementById('bioModalName');
+  const modalRole = document.getElementById('bioModalRole');
+  const modalText = document.getElementById('bioModalText');
+  const closeBtn = document.getElementById('bioModalClose');
+
+  document.querySelectorAll('.bio-trigger').forEach(card => {
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('.socials')) return; // let share/social icons work normally
+
+      e.preventDefault(); // stop the <a href="javascript:void(0)"> from doing anything odd
+
+      modalImg.src = card.dataset.img;
+      modalImg.alt = card.dataset.name;
+      modalName.textContent = card.dataset.name;
+      modalRole.textContent = card.dataset.role;
+      modalText.textContent = card.dataset.bio;
+
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+});
